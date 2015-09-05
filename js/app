@@ -1,0 +1,60 @@
+$(document).ready(function(){
+	
+	$('#artist-form').submit(function(artist){
+		artist = $('.artist').val();
+
+		searchArtist(artist);
+		
+		
+		
+		return false;
+	});
+
+	
+
+});
+
+var artist;
+
+// need to send GET request to spotify API
+var searchArtist = function(artist) {
+// parameters for searching for artist to get id 
+		var param = {
+				q: artist,
+				type: "artist",	
+			}
+
+
+		var artistId = $.ajax ({
+			url: "https://api.spotify.com/v1/search?",
+			data: param,
+			dataType: "json",
+			type: "GET",
+			})
+		.done(function(){
+			var id = artistId.responseJSON.artists.items[0].id;
+			artistArt(id);
+		});
+		
+};
+
+//need to send GET request to bandsintown API
+
+var artistArt = function(id) {
+	
+	var artist = $.ajax ({
+		url: "https://api.spotify.com/v1/artists/" +id,
+		dataType: "json",
+		type: "GET",
+	})
+	.done(function(){
+		var image = artist.responseJSON.images[0].url;
+		console.log(artist.responseJSON.images[0].url);
+		$('.cover-image').append("<img class='img' src='"+image+"' alt='cover-image'>");
+	});
+
+var topTracks = function(id) {
+	
+}
+
+}

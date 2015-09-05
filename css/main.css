@@ -1,0 +1,50 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;	
+  box-sizing: inherit;
+}
+
+
+
+.band-image {
+	display: flex;
+	margin-top: 1em;
+}
+
+.cover-image {
+	width: 30%;
+	height: 30em;
+	margin-left: 2.25em;
+	outline: 1px solid red;
+}
+
+.cover-image img {
+	width: 100%;
+	height: 100%;
+}
+
+.most-popular {
+	width: 30%;
+	height: 30em;
+	margin-left: 2.25em;
+	outline: 1px solid red;	
+}
+
+.tour-dates {
+	width: 30%;
+	height: 30em;
+	margin-left: 2.25em;
+	outline: 1px solid red;
+}
+
+.related-artists {
+	width: 90%;
+	outline: 1px solid red;
+	height: 15em;
+	margin: 1em auto;
+}
