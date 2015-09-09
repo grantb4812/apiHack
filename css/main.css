@@ -30,16 +30,24 @@ html {
 
 .most-popular {
 	width: 30%;
-	height: 30em;
 	margin-left: 2.25em;
 	outline: 1px solid red;	
+	
+}
+
+.most-popular li {
+	list-style-type: none;
 }
 
 .tour-dates {
 	width: 30%;
-	height: 30em;
 	margin-left: 2.25em;
 	outline: 1px solid red;
+	
+}
+
+.tour-dates li {
+	list-style-type: none;
 }
 
 .related-artists {
@@ -48,3 +56,21 @@ html {
 	height: 15em;
 	margin: 1em auto;
 }
+
+form {
+	margin-left: 37em;
+	padding-top: 1em;
+}
+
+#different-artist  li {
+	display: inline;
+	width: 20em;
+	padding: 2em;
+}
+
+.small-img {
+	height: 5em;
+	width: 5em;
+}
+
+

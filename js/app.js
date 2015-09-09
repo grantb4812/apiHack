@@ -35,6 +35,7 @@ var searchArtist = function(artist) {
 			var id = artistId.responseJSON.artists.items[0].id;
 			artistArt(id);
 			topTracks(id);
+			relatedArtist(id);
 		});
 		
 };
@@ -50,7 +51,6 @@ var artistArt = function(id) {
 	})
 	.done(function(){
 		var image = artist.responseJSON.images[0].url;
-		console.log(artist.responseJSON.images[0].url);
 		$('.cover-image').append("<img class='img' src='"+image+"' alt='cover-image'>");
 	});
 
@@ -64,7 +64,7 @@ var topTracks = function(id) {
 		type: "GET"
 	})
 	.done(function(result){
-		console.log(result.tracks);
+		
 		$.each(result.tracks, function(index, value){
 			$('#top-song').append("<li>"+value.name+"</li>");
 		})
@@ -88,11 +88,41 @@ var tourDates = function(artist){
 		type: "GET"
 	})
 	.done(function(result){
-		console.log(result);
+		
+		$.each(result, function(index, value){
+			$("#city-dates").append("<li>"+value.formatted_location+"</li>");
+		})
 	});
 };
 
-	
+var relatedArtist = function(id) {
 
+	var similarArtist = $.ajax({
+		url: "https://api.spotify.com/v1/artists/"+id+"/related-artists",
+		dataType: "json",
+		type: "GET"
+	})
+	.done(function(result) {
+		console.log(result);
+
+		$.each(result.artists, function(index, value) {
+			console.log(result.artists.length);
+
+			if (index < 5) {
+			$("#different-artist").append("<li><img class='small-img' src='"+value.images[0].url+"'>"+value.name+"</li>");
+			}
+			if (index > 5 && index < 11) {
+				relatedArtistClone();
+				$("#different-artist").append("<li><img class='small-img' src='"+value.images[0].url+"'>"+value.name+"</li>");
+			}
+
+		})
+	})
+}
+
+	
+var relatedArtistClone = function() {
+	var relatedUl = $("#different-artist").clone()
+}
 
 
