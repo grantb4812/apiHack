@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="color">
 <head>
 	<meta charset="UTF-8">
 	<title>Popular Songs | Concert Dates</title>
@@ -10,17 +10,35 @@
 </head>
 <body>
 
-	
+	<section class="intro-section">
+		<div class="intro-hide">
+		<div class="intro-questions">
+			<div class="question">
+				<h2>Looking for your favorite artist's top tracks?</h2>
+			</div>
+			<div class="question">
+				<h2>Maybe your looking for their upcoming concerts?</h2>
+			</div>
+			<div class="question">
+				<h2>Could you be looking for new but similar artist?</h2>
+			</div>
+		</div>
+		<div class="start-button">
+			<button type="submit" class="intro-button" id="come-in">Come In!</button>
+		</div>
+		</div>
+	</section>
 
-	<form action="submit-artist" id="artist-form">
-		<input type="text" name="artist" class="artist" placeholder="Search for an artist!"> 
-		<button type="submit" class="submit">Submit</button>
-	</form>
+	<div class="hidden">
 
-	<section class="band-image">
-	
+		<form action="submit-artist" id="artist-form" class="show-form">
+				<input type="text" name="artist" class="artist" placeholder="Search for an artist!"> 
+				<button type="submit" class="submit">Submit</button>
+			</form>
+
+		<div class="band-image">
 			<div class="cover-image">
-				
+			<!--	<img class="img" src="" alt="cover-img"> -->
 			</div>
 			<div class="most-popular">
 				<div class="popular-list song-template">
@@ -29,26 +47,24 @@
 					</ul>
 				</div>
 			</div>
-			<div class="tour-dates hidden">
+			<div class="tour-dates">
 				<div class="tour-list tour-template">
 					<ul id="city-dates">
 					
 					</ul>
 				</div>
 			</div>
-		
-	</section>
-	<div class="hidden">
-	<section class="recommended-listening">
-		<div class="related-artists">
-			<div class="similar related-template">
-				<ul id="different-artist">
+		</div>	
+			<div class="recommended-listening">
+				<div class="related-artists">
+					<div class="similar related-template">
+						<ul id="different-artist">
 					
-				</ul>
-				
+						</ul>
+					</div>
+				</div>
 			</div>
-		</div>
-	</section>
-	</div>
+		
+
 </body>
 </html>

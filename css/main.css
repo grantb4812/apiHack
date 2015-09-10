@@ -9,7 +9,16 @@ html {
   box-sizing: inherit;
 }
 
+.color {
+	background-image: 
+		linear-gradient(
+			to right,
+			rgb(112, 9, 173),
+			rgb(173, 9, 113),
+			rgb(112, 9, 173)
 
+			);
+}
 
 .band-image {
 	display: flex;
@@ -20,7 +29,7 @@ html {
 	width: 30%;
 	height: 30em;
 	margin-left: 2.25em;
-	outline: 1px solid red;
+	
 }
 
 .cover-image img {
@@ -31,7 +40,7 @@ html {
 .most-popular {
 	width: 30%;
 	margin-left: 2.25em;
-	outline: 1px solid red;	
+	
 	
 }
 
@@ -42,7 +51,7 @@ html {
 .tour-dates {
 	width: 30%;
 	margin-left: 2.25em;
-	outline: 1px solid red;
+	
 	
 }
 
@@ -52,7 +61,7 @@ html {
 
 .related-artists {
 	width: 90%;
-	outline: 1px solid red;
+	
 	height: 15em;
 	margin: 1em auto;
 }
@@ -72,5 +81,37 @@ form {
 	height: 5em;
 	width: 5em;
 }
+
+.hidden {
+	display: none;
+}
+
+.intro-questions {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	padding-top: 5em;
+}
+
+.question {
+	width: 25%;
+	height: 20em;
+	margin: 0 auto;
+
+}
+
+.start-button {
+	width: 33%;
+	margin: 0 auto;
+	padding: 5em 0 0 7em;
+}
+
+.intro-button {
+	width: 60%;
+	height: 3em;
+	border-radius: 10em;
+	background-color: rgb(173, 9, 173);
+}
+
 
 

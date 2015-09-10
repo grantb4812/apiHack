@@ -10,6 +10,16 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$('#come-in').on('click', function(){
+
+		$('.intro-hide').hide();
+		$('.hidden').show();
+		
+
+
+		return false;
+	});
+
 	
 
 });
@@ -88,8 +98,9 @@ var tourDates = function(artist){
 		type: "GET"
 	})
 	.done(function(result){
-		
+		console.log(result)
 		$.each(result, function(index, value){
+			
 			$("#city-dates").append("<li>"+value.formatted_location+"</li>");
 		})
 	});
@@ -112,7 +123,6 @@ var relatedArtist = function(id) {
 			$("#different-artist").append("<li><img class='small-img' src='"+value.images[0].url+"'>"+value.name+"</li>");
 			}
 			if (index > 5 && index < 11) {
-				relatedArtistClone();
 				$("#different-artist").append("<li><img class='small-img' src='"+value.images[0].url+"'>"+value.name+"</li>");
 			}
 
@@ -120,9 +130,20 @@ var relatedArtist = function(id) {
 	})
 }
 
-	
-var relatedArtistClone = function() {
-	var relatedUl = $("#different-artist").clone()
+/*
+var showSearch = function() {
+	var search = $('#artist-form').clone();
+	$('.intro-section').append(search);
 }
+*/
+/*
+var showImage = function(image) {
 
+	var pic = $('.cover-image').clone();
+
+	
+
+	
+}
+*/
 
